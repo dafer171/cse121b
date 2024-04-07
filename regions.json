@@ -10,8 +10,18 @@
 {"ID":"SAM","LocalizedName":"South America","EnglishName":"South America"},
 
 {
-    "ID": "TL",
-    "LocalizedName": "Timor-Leste",
-    "EnglishName": "Timor-Leste"
-}]
+    "ID": "ES",
+    "LocalizedName": "Spain",
+    "EnglishName": "Spain"
+  },
+  {
+    "ID": "AN",
+    "LocalizedName": "Andalusia",
+    "EnglishName": "Andalusia",
+    "Level": 1,
+    "LocalizedType": "Autonomous Community",
+    "EnglishType": "Autonomous Community",
+    "CountryID": "ES"
+  },
+]
 

@@ -1,3 +1,8 @@
+
+Aquí está el HTML completo con los cambios aplicados:
+
+html
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +25,8 @@
       <li><a href="w01-task.html">W1 Task</a></li>
       <li><a href="w03-task.html">W3 Task</a></li>
       <li><a href="w04-task.html">W4 Task</a></li>
-      <li><a href="w05-task.html" >W5 Task</a></li>
-      <li><a href="project.html"class="active">Project</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html" class="active">Project</a></li>
     </ul>
   </nav>
   <main id="gridly">
@@ -46,9 +51,25 @@
     </select>
 
     <div id="countries">
+      <h3>After selecting a Region you can select a Country</h3>
+      <select id="filteredCountry" title="Choose a country.">
+        <option value="" disabled selected>Filter Countries</option>
+      </select>
+    </div>
+
+    <div id="areas">
+      <h3>After selecting a Country you can select an Area</h3>
+      <select id="filteredArea" title="Choose a area.">
+        <option value="" disabled selected>Filter Areas</option>
+      </select>
+    </div>
+
+    <div id="city">
+      <h3>Look for a city in the selected Area</h3>
+      <input type="text" id="cityInput" placeholder="Enter city name">
+      <button id="searchButton">Search</button>
     </div>
   </main>
-
 
   <footer>
     &copy;<span id="year"></span> | Week 06 - Project | CSE 121b
