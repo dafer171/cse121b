@@ -101,6 +101,22 @@ const forecast = async () => {
   );
   const forecastData = await response.json();
   console.log(forecastData);
+
+  const headline = forecastData.Headline.Text;
+  const dailyForecast = forecastData.DailyForecasts[0];
+  const minTemperature = dailyForecast.Temperature.Minimum.Value;
+  const maxTemperature = dailyForecast.Temperature.Maximum.Value;
+  const dayIconPhrase = dailyForecast.Day.IconPhrase;
+  const nightIconPhrase = dailyForecast.Night.IconPhrase;
+
+  const forecastElement = document.getElementById('forecast');
+  forecastElement.innerHTML = `
+    <h3>${headline}</h3>
+    <p>Minimum Temperature: ${minTemperature} F</p>
+    <p>Maximum Temperature: ${maxTemperature} F</p>
+    <p>Day Icon Phrase: ${dayIconPhrase}</p>
+    <p>Night Icon Phrase: ${nightIconPhrase}</p>
+  `;
 };
 
 /* Event Listeners */
@@ -120,5 +136,12 @@ document.querySelector('#filteredArea').addEventListener('change', () => {
 document.getElementById('searchButton').addEventListener('click', () => {
   searchedCity = document.getElementById('cityInput').value.trim();
   //console.log(searchedCity);
-  cityID();
+  const errorMessageElement = document.getElementById('errorMessage');
+
+  if (searchedCity) {
+    cityID();
+    errorMessageElement.textContent = '';
+  } else {
+    errorMessageElement.textContent = 'Please enter a city name.';
+  }
 });
