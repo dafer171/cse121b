@@ -62,7 +62,7 @@ const displayAreas = (areas) => {
 const apiKey = '17lC1T1dYh44AxooMQWDrl0EJYlNQALB';
 const getCountries = async () => {
   const response = await fetch(
-    `http://dataservice.accuweather.com/locations/v1/countries/${selectedRegion}?apikey=${apiKey}`
+    `https://dataservice.accuweather.com/locations/v1/countries/${selectedRegion}?apikey=${apiKey}`
   );
   const countriesList = await response.json();
   //console.log(countriesList);
@@ -72,7 +72,7 @@ const getCountries = async () => {
 /* async getArea Function using fetch()*/
 const getArea = async () => {
   const response = await fetch(
-    `http://dataservice.accuweather.com/locations/v1/adminareas/${selectedCountry}?apikey=${apiKey}`
+    `https://dataservice.accuweather.com/locations/v1/adminareas/${selectedCountry}?apikey=${apiKey}`
   );
   const areaList = await response.json();
   //console.log(areaList);
@@ -82,7 +82,7 @@ const getArea = async () => {
 /* async cityID Function using fetch()*/
 const cityID = async () => {
   const response = await fetch(
-    `http://dataservice.accuweather.com/locations/v1/${selectedCountry}/${selectedArea}/search?apikey=${apiKey}&q=${searchedCity}`
+    `https://dataservice.accuweather.com/locations/v1/${selectedCountry}/${selectedArea}/search?apikey=${apiKey}&q=${searchedCity}`
   );
   const cityData = await response.json();
   //console.log(cityData);
@@ -97,7 +97,7 @@ const cityID = async () => {
 
 const forecast = async () => {
   const response = await fetch(
-    `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${searchedCityID}?apikey=${apiKey}`
+    `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${searchedCityID}?apikey=${apiKey}`
   );
   const forecastData = await response.json();
   console.log(forecastData);
